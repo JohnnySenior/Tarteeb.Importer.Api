@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tarteeb.Importer", "Tarteeb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tarteeb.Importer.Api.Tests.Unit", "Tarteeb.Importer.Api.Tests.Unit\Tarteeb.Importer.Api.Tests.Unit.csproj", "{7838DE4B-0168-4592-8357-2F5A264B86C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tarteeb.Importer.Api.Infrastructure.Build", "Tarteeb.Importer.Api.Infrastructure.Build\Tarteeb.Importer.Api.Infrastructure.Build.csproj", "{3FE13EBB-4FD1-4335-9932-0BBA37A818DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7838DE4B-0168-4592-8357-2F5A264B86C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7838DE4B-0168-4592-8357-2F5A264B86C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7838DE4B-0168-4592-8357-2F5A264B86C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FE13EBB-4FD1-4335-9932-0BBA37A818DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FE13EBB-4FD1-4335-9932-0BBA37A818DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FE13EBB-4FD1-4335-9932-0BBA37A818DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FE13EBB-4FD1-4335-9932-0BBA37A818DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
