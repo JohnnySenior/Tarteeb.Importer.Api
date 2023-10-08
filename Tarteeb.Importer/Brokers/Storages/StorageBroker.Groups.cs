@@ -1,5 +1,5 @@
-﻿using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 using Tarteeb.Importer.Models.Groups;
 
 namespace Tarteeb.Importer.Brokers.Storages
@@ -15,5 +15,9 @@ namespace Tarteeb.Importer.Brokers.Storages
 
             return group;
         }
+
+        public async Task<Group> SelectGroupByName(string groupName) =>
+            await this.Groups.FirstOrDefaultAsync(
+                g => g.GroupName == groupName);
     }
 }
