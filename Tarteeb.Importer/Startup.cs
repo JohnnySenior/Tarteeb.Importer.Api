@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Tarteeb.Importer.Brokers.Storages;
 
 namespace Tarteeb.Importer
 {
@@ -21,7 +22,7 @@ namespace Tarteeb.Importer
 
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<StorageBroker>();
             services.AddControllers();
 
             var openApiInfo = new OpenApiInfo
