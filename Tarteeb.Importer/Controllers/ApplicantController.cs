@@ -28,5 +28,11 @@ namespace Tarteeb.Importer.Controllers
         {
             return Ok(this.orchestrationService.ImportFromExcel(filePath));
         }
+
+        [HttpPost("InsertedApplicants")]
+        public async Task<ActionResult<List<Applicant>>> PostApplicants()
+        {
+            return Ok(await this.orchestrationService.InsertedApplicant(filePath));
+        }
     }
 }
