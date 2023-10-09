@@ -21,7 +21,7 @@ namespace Tarteeb.Importer.Brokers.Storages
             return group;
         }
 
-        public async Task<Group> SelectGroupByName(string groupName) =>
+        public async Task<Group> SelectGroupByNameAsync(string groupName) =>
             await this.Groups.FirstOrDefaultAsync(
                 g => g.GroupName == groupName);
     }
