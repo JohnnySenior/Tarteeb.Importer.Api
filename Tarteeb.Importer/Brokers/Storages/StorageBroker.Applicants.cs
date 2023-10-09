@@ -4,6 +4,7 @@
 //===========================
 
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Threading.Tasks;
 using Tarteeb.Importer.Models.Applicants;
 
@@ -20,5 +21,8 @@ namespace Tarteeb.Importer.Brokers.Storages
 
             return applicant;
         }
+
+        public async Task<Applicant> SelectApplicantByIdAsync(Guid applicantId) =>
+            await this.Applicants.FindAsync(applicantId);
     }
 }
