@@ -18,7 +18,8 @@ namespace Tarteeb.Importer.Services.Processings
 
         public List<Applicant> ValidateInvalidApplicants(string filePath)
         {
-            var notNullApplicants = this.spreadsheetService.GetAllApplicants(filePath);
+            var notNullApplicants = this
+                .spreadsheetService.GetAllApplicants(filePath);
             var validApplicants = new List<Applicant>();
 
             foreach (var applicant in notNullApplicants)
@@ -26,14 +27,22 @@ namespace Tarteeb.Importer.Services.Processings
                 try
                 {
                     Validate(
-                        (Rule: IsInvalid(applicant.ApplicantId), Parameter: nameof(Applicant.ApplicantId)),
-                        (Rule: IsInvalid(applicant.FirstName), Parameter: nameof(Applicant.FirstName)),
-                        (Rule: IsInvalid(applicant.LastName), Parameter: nameof(Applicant.LastName)),
-                        (Rule: IsInvalid(applicant.Email), Parameter: nameof(Applicant.Email)),
-                        (Rule: IsInvalid(applicant.PhoneNumber), Parameter: nameof(Applicant.PhoneNumber)),
-                        (Rule: IsInvalid(applicant.BirthDate), Parameter: nameof(Applicant.BirthDate)),
-                        (Rule: IsInvalid(applicant.GroupName), Parameter: nameof(Applicant.GroupName)),
-                        (Rule: IsInvalid(applicant.GroupId), Parameter: nameof(Applicant.GroupId)));
+                        (Rule: IsInvalid(applicant.ApplicantId), 
+                        Parameter: nameof(Applicant.ApplicantId)),
+                        (Rule: IsInvalid(applicant.FirstName), 
+                        Parameter: nameof(Applicant.FirstName)),
+                        (Rule: IsInvalid(applicant.LastName), 
+                        Parameter: nameof(Applicant.LastName)),
+                        (Rule: IsInvalid(applicant.Email), 
+                        Parameter: nameof(Applicant.Email)),
+                        (Rule: IsInvalid(applicant.PhoneNumber), 
+                        Parameter: nameof(Applicant.PhoneNumber)),
+                        (Rule: IsInvalid(applicant.BirthDate), 
+                        Parameter: nameof(Applicant.BirthDate)),
+                        (Rule: IsInvalid(applicant.GroupName), 
+                        Parameter: nameof(Applicant.GroupName)),
+                        (Rule: IsInvalid(applicant.GroupId), 
+                        Parameter: nameof(Applicant.GroupId)));
 
                     if (invalidApplicantException.Data.Count == 0)
                     {
