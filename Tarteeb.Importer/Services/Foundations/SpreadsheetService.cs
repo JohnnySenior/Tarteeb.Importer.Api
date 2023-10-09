@@ -12,7 +12,12 @@ namespace Tarteeb.Importer.Services.Foundations
 {
     public class SpreadsheetService
     {
-        SpreadsheetBroker spreadsheetBroker = new SpreadsheetBroker();
+        private readonly SpreadsheetBroker spreadsheetBroker;
+
+        public SpreadsheetService(SpreadsheetBroker spreadsheetBroker)
+        {
+            this.spreadsheetBroker = spreadsheetBroker;
+        }
 
         public List<Applicant> GetAllApplicants(string filePath)
         {
