@@ -20,5 +20,8 @@ namespace Tarteeb.Importer.Services.Foundations
 
         public async Task<Group> AddGroupAsync(Group group) =>
             await this.storageBroker.InsertGroupAsync(group);
+
+        public async Task<Group> GetGroupByNameAsync(string groupName) =>
+            await this.storageBroker.SelectGroupByNameAsync(groupName);
     }
 }
