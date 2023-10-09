@@ -14,7 +14,12 @@ namespace Tarteeb.Importer.Services.Processings
     public class SpreadsheetProcessingService
     {
         InvalidApplicantException invalidApplicantException = new InvalidApplicantException();
-        SpreadsheetService spreadsheetService = new SpreadsheetService();
+        private readonly SpreadsheetService spreadsheetService;
+
+        public SpreadsheetProcessingService(SpreadsheetService spreadsheetService)
+        {
+            this.spreadsheetService = spreadsheetService;
+        }
 
         public List<Applicant> ValidateInvalidApplicants(string filePath)
         {
