@@ -1,4 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿//===========================
+// Copyright (c) Tarteeb LLC
+// Powering True Leadership
+//===========================
+
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using Tarteeb.Importer.Models.Groups;
 
