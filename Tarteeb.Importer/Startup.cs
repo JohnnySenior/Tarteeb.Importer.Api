@@ -10,6 +10,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Tarteeb.Importer.Brokers.Storages;
+using Tarteeb.Importer.Services.Foundations;
+using Tarteeb.Importer.Services.Orchestrations;
+using Tarteeb.Importer.Services.Processings;
+using Tarteeb.Provider.Brokers.Spreadsheets;
 
 namespace Tarteeb.Importer
 {
@@ -22,8 +26,16 @@ namespace Tarteeb.Importer
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<StorageBroker>();
             services.AddControllers();
+            services.AddDbContext<StorageBroker>();
+            services.AddTransient<SpreadsheetBroker>();
+            services.AddTransient<OrchestrationService>();
+            services.AddTransient<SpreadsheetService>();
+            services.AddTransient<SpreadsheetProcessingService>();
+            services.AddTransient<GroupService>();
+            services.AddTransient<GroupProcessingService>();
+            services.AddTransient<ApplicantService>();
+            services.AddTransient<ProcessingApplicantService>();
 
             var openApiInfo = new OpenApiInfo
             {
