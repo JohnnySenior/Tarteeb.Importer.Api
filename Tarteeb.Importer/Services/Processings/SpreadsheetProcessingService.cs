@@ -3,11 +3,11 @@
 // Powering True Leadership
 //===========================
 
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 using Tarteeb.Importer.Models.Applicants;
-using Tarteeb.Importer.Services.Foundations;
 using Tarteeb.Importer.Models.Exceptions;
+using Tarteeb.Importer.Services.Foundations;
 
 namespace Tarteeb.Importer.Services.Processings
 {
@@ -27,21 +27,21 @@ namespace Tarteeb.Importer.Services.Processings
                 try
                 {
                     Validate(
-                        (Rule: IsInvalid(applicant.ApplicantId), 
+                        (Rule: IsInvalid(applicant.ApplicantId),
                         Parameter: nameof(Applicant.ApplicantId)),
-                        (Rule: IsInvalid(applicant.FirstName), 
+                        (Rule: IsInvalid(applicant.FirstName),
                         Parameter: nameof(Applicant.FirstName)),
-                        (Rule: IsInvalid(applicant.LastName), 
+                        (Rule: IsInvalid(applicant.LastName),
                         Parameter: nameof(Applicant.LastName)),
-                        (Rule: IsInvalid(applicant.Email), 
+                        (Rule: IsInvalid(applicant.Email),
                         Parameter: nameof(Applicant.Email)),
-                        (Rule: IsInvalid(applicant.PhoneNumber), 
+                        (Rule: IsInvalid(applicant.PhoneNumber),
                         Parameter: nameof(Applicant.PhoneNumber)),
-                        (Rule: IsInvalid(applicant.BirthDate), 
+                        (Rule: IsInvalid(applicant.BirthDate),
                         Parameter: nameof(Applicant.BirthDate)),
-                        (Rule: IsInvalid(applicant.GroupName), 
+                        (Rule: IsInvalid(applicant.GroupName),
                         Parameter: nameof(Applicant.GroupName)),
-                        (Rule: IsInvalid(applicant.GroupId), 
+                        (Rule: IsInvalid(applicant.GroupId),
                         Parameter: nameof(Applicant.GroupId)));
 
                     if (invalidApplicantException.Data.Count == 0)
@@ -53,7 +53,7 @@ namespace Tarteeb.Importer.Services.Processings
                 }
                 catch (InvalidApplicantException ex)
                 {
-                    Console.Write($"{applicant.FirstName} => " );
+                    Console.Write($"{applicant.FirstName} => ");
                     Console.WriteLine(ex.Message);
 
                     invalidApplicantException.Data.Clear();
