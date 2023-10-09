@@ -16,9 +16,6 @@ namespace Tarteeb.Importer.Services.Orchestrations
         private readonly GroupProcessingService groupProcessingService;
         private readonly ProcessingApplicantService applicantProcessningService;
 
-        List<Applicant> readyApplicants = new List<Applicant>();
-        List<Applicant> fullAplicants = new List<Applicant>();
-
         public OrchestrationService(
             SpreadsheetProcessingService spreadsheetProcessingService,
             GroupProcessingService groupProcessingService,
@@ -29,7 +26,7 @@ namespace Tarteeb.Importer.Services.Orchestrations
             this.applicantProcessningService = applicantProcessningService;
         }
 
-        private async Task<List<Applicant>> InsertedApplicant(string filePath)
+        public async Task<List<Applicant>> InsertedApplicant(string filePath)
         {
             var readyApplicants = await FullApplicants(filePath);
 
@@ -39,17 +36,17 @@ namespace Tarteeb.Importer.Services.Orchestrations
             return insertedApplicants;
         }
 
-        private async Task<List<Applicant>> FullApplicants(string filePath)
+        public async Task<List<Applicant>> FullApplicants(string filePath)
         {
             var importedApplicants = ImportFromExcel(filePath);
 
-            fullAplicants = await
+            var fullAplicants = await
                 groupProcessingService.AllApplicants(importedApplicants);
 
             return fullAplicants;
         }
 
-        private List<Applicant> ImportFromExcel(string filePath) =>
+        public List<Applicant> ImportFromExcel(string filePath) =>
             spreadsheetProcessingService.ValidateInvalidApplicants(filePath);
     }
 }
