@@ -1,4 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿//===========================
+// Copyright (c) Tarteeb LLC
+// Powering True Leadership
+//===========================
+
+using Microsoft.AspNetCore.Mvc;
 
 namespace Tarteeb.Importer.Controllers
 {

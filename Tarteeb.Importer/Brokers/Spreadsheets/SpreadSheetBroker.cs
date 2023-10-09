@@ -3,8 +3,8 @@
 // Powering True Leadership
 //===============================
 
-using System;
 using Bytescout.Spreadsheet;
+using System;
 using Tarteeb.Importer.Models.Applicants;
 
 namespace Tarteeb.Provider.Brokers.Spreadsheets
